@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Data from '../components/data';
 import CurrencyList from '../components/currencyList';
+import Background from '../components/background-gradient';
 
 export default class extends Component {
   state = {
@@ -18,7 +19,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <h1>Bitcoin Price Index over 30d</h1>
+        <h1>Bitcoin Price Index</h1>
         <CurrencyList
           currencies={this.state.currencies}
           value={this.state.selectedCurrency}
@@ -37,16 +38,20 @@ export default class extends Component {
 
           div {
             display: flex;
-            flex: 1;
             flex-direction: column;  /* make main axis vertical */
             justify-content: space-between;
             align-items: center;
+            height: 90vh;
             width: 100%;
-            padding: 2em;
-
+            padding: 5vh;
+            background: #DE5157;
+            background: linear-gradient(to bottom, #ff7e5f, #feb47b )
           }
           footer { 
             margin-top: 1em; 
+          }
+          footer a {
+            color: #000;
           }
           `}</style>
         <style jsx global>{`

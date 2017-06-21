@@ -8,22 +8,28 @@ const FooComponent = props => {
     );
   }
   if (props.loading) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="loading">
+        Loading...
+      </div>
+    );
   }
 
   const data = Object.keys(props.data.bpi).map((x, i) => ({
     date: new Date(x),
     value: props.data.bpi[x]
   }));
-  console.log(data);
 
   return (
-    <AreaChart
-      data={data}
-      width={800}
-      height={600}
-      margin={{ left: 40, right: 40, top: 40, bottom: 40 }}
-    />
+    <div>
+      <AreaChart
+        data={data}
+        width={800}
+        height={600}
+        margin={{ left: 40, right: 40, top: 40, bottom: 40 }}
+      />
+      <style jsx>{`display: flex; flex-grow: 1;`}</style>
+    </div>
   );
 };
 

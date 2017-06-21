@@ -41,7 +41,14 @@ export default ({ width, height, data, margin }) => {
 
   return (
     <svg width={width} height={height}>
-      <rect x={0} y={0} width={width} height={height} fill="#DE5157" rx={14} />
+      <rect
+        x={0}
+        y={0}
+        width={width}
+        height={height}
+        fill="transparent"
+        rx={14}
+      />
       <LinearGradient
         id={'gradient'}
         from="#ffffff"
