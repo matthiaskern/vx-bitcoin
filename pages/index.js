@@ -3,6 +3,7 @@ import Data from '../components/data';
 import CurrencyList from '../components/currencyList';
 import Background from '../components/background-gradient';
 import Head from '../components/head';
+import Worker from '../components/serviceWorker';
 
 export default class extends Component {
   state = {
@@ -20,15 +21,18 @@ export default class extends Component {
   render() {
     return (
       <div>
+        <Worker />
         <Head />
         <h1>Bitcoin Price Index</h1>
-        <CurrencyList
-          currencies={this.state.currencies}
-          value={this.state.selectedCurrency}
-          onChange={this.handleChange.bind(this)}
-        />
         <Data currency={this.state.selectedCurrency} />
         <footer>
+
+          <CurrencyList
+            currencies={this.state.currencies}
+            value={this.state.selectedCurrency}
+            onChange={this.handleChange.bind(this)}
+          />
+          {' '}
           Data from
           {' '}
           <a href="https://www.coindesk.com" target="_blank" rel="noopener">
@@ -51,6 +55,7 @@ export default class extends Component {
           }
           footer { 
             margin-top: 1em; 
+            line-height: 30px;
           }
           footer a {
             color: #000;

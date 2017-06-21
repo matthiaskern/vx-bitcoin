@@ -11,13 +11,15 @@
     "@vx/group": "^0.0.114",
     "@vx/scale": "^0.0.117",
     "@vx/shape": "^0.0.119",
+    "copy-webpack-plugin": "^4.0.1",
     "d3-array": "^1.2.0",
     "fetch-hoc": "^0.1.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^2.4.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "vx": "^0.0.1"
+    "vx": "^0.0.1",
+    "workbox-webpack-plugin": "^1.0.1"
   },
   "scripts": {
     "dev": "next",

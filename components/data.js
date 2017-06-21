@@ -35,5 +35,6 @@ const FooComponent = props => {
 
 export default fetch(
   ({ currency }) =>
-    `http://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`
+    `http://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`,
+  { mode: 'cors' }
 )(FooComponent);

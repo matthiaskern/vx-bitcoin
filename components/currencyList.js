@@ -5,6 +5,10 @@ export default ({ currencies, ...props }) => (
     ))}
     <style jsx>
       {`
+        select {
+          height: 30px;
+        }
+
       `}
     </style>
   </select>
