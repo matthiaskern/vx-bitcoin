@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Data from '../components/data';
 import CurrencyList from '../components/currencyList';
 import Background from '../components/background-gradient';
+import Head from '../components/head';
 
 export default class extends Component {
   state = {
@@ -19,6 +20,7 @@ export default class extends Component {
   render() {
     return (
       <div>
+        <Head />
         <h1>Bitcoin Price Index</h1>
         <CurrencyList
           currencies={this.state.currencies}
