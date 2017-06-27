@@ -3,7 +3,7 @@ import Data from '../components/data';
 import CurrencyList from '../components/currencyList';
 import Background from '../components/background-gradient';
 import Head from '../components/head';
-import Worker from '../components/serviceWorker';
+import ServiceWorker from '../components/service-worker';
 
 export default class extends Component {
   state = {
@@ -21,8 +21,8 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <Worker />
         <Head />
+        <ServiceWorker />
         <h1>Bitcoin Price Index</h1>
         <Data currency={this.state.selectedCurrency} />
         <footer>
