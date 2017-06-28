@@ -1,7 +1,7 @@
 import fetch from 'fetch-hoc';
 import AreaChart from './area-chart';
 
-const FooComponent = props => {
+const DataComponent = props => {
   if (props.error) {
     return (
       <div className="error">An error occured! {props.error.toString()}</div>
@@ -37,4 +37,4 @@ export default fetch(
   ({ currency }) =>
     `http://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`,
   { mode: 'cors' }
-)(FooComponent);
+)(DataComponent);

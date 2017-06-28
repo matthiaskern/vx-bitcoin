@@ -27,7 +27,7 @@ module.exports = {
                       .replace(/\.js$/, '')}`
                   : `/_next/-/${asset}`;
           },
-          autoUpdate: 1000 * 60 * 5, // (five minutes)
+          autoUpdate: 1000 * 60 * 60 * 5, // (five minutes)
           __tests: dev ? { ignoreRuntime: true } : {}, // Hack to circumvent check of offlineplugin
           ServiceWorker: {
             directory: './',

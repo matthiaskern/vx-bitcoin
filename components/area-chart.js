@@ -7,6 +7,7 @@ import { curveMonotoneX } from '@vx/curve';
 import { LinearGradient } from '@vx/gradient';
 import { scaleTime, scaleLinear } from '@vx/scale';
 import { extent, max } from 'd3-array';
+import { withScreenSize } from '@vx/responsive';
 
 const xVal = d => d.date;
 const yVal = v => v.value;
@@ -24,7 +25,11 @@ function numTicksForWidth(width) {
   return 10;
 }
 
-export default ({ width, height, data, margin }) => {
+const AreaChart = ({ screenWidth, screenHeight, data, margin }) => {
+  const padding = 40;
+  const height = screenHeight * 0.75;
+  let width = screenWidth - padding;
+  if (width > 1000) width = 1000;
   // bounds
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -152,3 +157,5 @@ export default ({ width, height, data, margin }) => {
     </svg>
   );
 };
+
+export default withScreenSize(AreaChart);

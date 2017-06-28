@@ -9,6 +9,7 @@
     "@vx/gradient": "^0.0.112",
     "@vx/grid": "^0.0.119",
     "@vx/group": "^0.0.114",
+    "@vx/responsive": "0.0.120",
     "@vx/scale": "^0.0.117",
     "@vx/shape": "^0.0.119",
     "copy-webpack-plugin": "^4.0.1",

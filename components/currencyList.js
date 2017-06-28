@@ -7,6 +7,7 @@ export default ({ currencies, ...props }) => (
       {`
         select {
           height: 30px;
+          margin-right: 20px;
         }
 
       `}
