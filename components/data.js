@@ -4,15 +4,13 @@ import AreaChart from './area-chart';
 const DataComponent = props => {
   if (props.error) {
     return (
-      <div className="error">An error occured! {props.error.toString()}</div>
+      <div className="error">
+        An error occured! {props.error.toString()}
+      </div>
     );
   }
   if (props.loading) {
-    return (
-      <div className="loading">
-        Loading...
-      </div>
-    );
+    return <div className="loading">Loading...</div>;
   }
 
   const data = Object.keys(props.data.bpi).map((x, i) => ({
@@ -28,13 +26,15 @@ const DataComponent = props => {
         height={600}
         margin={{ left: 40, right: 40, top: 40, bottom: 40 }}
       />
-      <style jsx>{`display: flex; flex-grow: 1;`}</style>
+      <style jsx>{`
+        display: flex;
+        flex-grow: 1;
+      `}</style>
     </div>
   );
 };
 
 export default fetch(
   ({ currency }) =>
-    `http://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`,
-  { mode: 'cors' }
+    `https://cors.now.sh/http://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`
 )(DataComponent);
